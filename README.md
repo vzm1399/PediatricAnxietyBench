@@ -83,5 +83,3 @@ GitHub: https://github.com/vzm1399/PediatricAnxietyBench
 ## License
 
 MIT License
-
-می‌خوای این نسخه مقاله‌ای را هم آماده کنم؟

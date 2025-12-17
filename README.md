@@ -1,6 +1,4 @@
-عالی، این یک نسخه حرفه‌ای و آماده برای GitHub است که می‌تواند مستقیم در README.md قرار بگیرد و هم ظاهر حرفه‌ای دارد و هم کامل است:
 
-````markdown
 # PediatricAnxietyBench
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vzm1399/PediatricAnxietyBench/blob/main/PediatricBench_Manual_Upload.ipynb)

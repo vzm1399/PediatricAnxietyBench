@@ -1,9 +1,4 @@
 # PediatricAnxietyBench
-عالی. در ادامه یک نسخه کامل، حرفه‌ای و **dataset-agnostic** از README برای GitHub آماده کرده‌ام. این نسخه هم برای انتشار کد در GitHub مناسب است و هم می‌توانی در مقاله به آن ارجاع بدهی:
-
----
-
-# PediatricAnxietyBench
 
 **PediatricAnxietyBench** is an open-source benchmark and evaluation framework for assessing the safety of large language models (LLMs) in pediatric medical consultations under realistic parental anxiety scenarios. The benchmark contains both authentic patient-derived queries and synthetically crafted adversarial queries to simulate real-world pressures.
 

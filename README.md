@@ -75,5 +75,3 @@ This project is licensed under the **MIT License**.
 * Any dataset following the benchmark schema can be evaluated using this framework.
 * Adversarial queries are simulated to reflect real-world parental anxiety pressures.
 * Designed for reproducible evaluation of pediatric LLM safety in high-stakes scenarios.
-
-```

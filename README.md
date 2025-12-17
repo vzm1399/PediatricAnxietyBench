@@ -1,71 +1,57 @@
+عالی، این یک نسخه حرفه‌ای و آماده برای GitHub است که می‌تواند مستقیم در README.md قرار بگیرد و هم ظاهر حرفه‌ای دارد و هم کامل است:
+
+````markdown
 # PediatricAnxietyBench
 
-**PediatricAnxietyBench** is an open-source benchmark and evaluation framework for assessing the safety of large language models (LLMs) in pediatric medical consultations under realistic parental anxiety scenarios. The benchmark contains both authentic patient-derived queries and synthetically crafted adversarial queries to simulate real-world pressures.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vzm1399/PediatricAnxietyBench/blob/main/PediatricBench_Manual_Upload.ipynb)
 
-This repository includes the evaluation notebook, code to merge datasets, and automated safety metrics computation.
+**Evaluating LLM Safety in Pediatric Consultations**  
+
+PediatricAnxietyBench is an open-source benchmark for evaluating large language model (LLM) safety under realistic parental anxiety pressures in pediatric medical consultations. It provides a modular framework that can be applied to any dataset following the benchmark schema.
 
 ---
 
 ## Features
-
-* **Dataset-agnostic evaluation:** Any dataset following the specified JSONL schema can be used.
-* **Safety metrics:** Measures diagnostic restraint, referral adherence, hedging language, emergency recognition, and overall resistance to adversarial pressure.
-* **Supports multiple models:** Easily switch between Llama-3.3-70B, Llama-3.1-8B, or any other compatible LLM.
-* **Automatic merging and reporting:** Combines multiple datasets, runs evaluations, and outputs JSONL results with summary statistics.
-
----
-
-## Dataset Format
-
-Each dataset must be a JSONL file with the following fields:
-
-* `id`: Unique query identifier
-* `text`: Query text
-* `topic`: Pediatric topic (e.g., Fever, Seizures)
-* `adversarial`: Boolean flag (`true` / `false`) indicating whether the query is adversarial
-* `source`: Source of the query (e.g., `claude_generated`, `healthcaremagic`)
-
-**Example structure:**
-
-```text
-data/
-├── raw_claude.jsonl       # Synthetic adversarial queries
-└── mentalchat_filtered.jsonl  # Authentic patient queries
-```
-
-> **Note:** Any JSONL dataset that conforms to this schema can be used with the notebook without modifying the code.
+- **Dataset-agnostic:** Evaluate any dataset formatted according to PediatricAnxietyBench guidelines.  
+- **Comprehensive Safety Metrics:** Diagnostic restraint, referral adherence, hedging language, emergency recognition, and adversarial resistance.  
+- **Open-Source Models:** Supports Llama models via Groq API.  
+- **Reproducible & Transparent:** Includes complete evaluation scripts and notebooks.
 
 ---
 
-## Getting Started
-
-1. Clone the repository:
-
+## Installation
+Clone the repository:
 ```bash
 git clone https://github.com/vzm1399/PediatricAnxietyBench.git
 cd PediatricAnxietyBench
+````
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
 ```
 
-2. Open the evaluation notebook in Colab:
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vzm1399/PediatricAnxietyBench/blob/main/PediatricBench_Manual_Upload.ipynb)
-
-3. Upload your datasets (or use the provided examples) and run the notebook.
+*(Alternatively, open the Colab notebook for one-click setup.)*
 
 ---
 
-## Evaluation Process
+## Usage
 
-1. Merge authentic and synthetic queries automatically.
-2. Send each query to the selected LLM model.
-3. Analyze responses for:
+1. Prepare your dataset in **JSONL** format, following the benchmark schema:
 
-   * Hedging language
-   * Referral recommendations
-   * Definitive diagnoses
-   * Emergency recognition
-4. Compute a composite safety score and generate summary statistics.
-5. Export results to `groq_evaluations.jsonl` (or a chosen filename).
+   * `id`: Unique query identifier
+   * `text`: Query text
+   * `topic`: Pediatric topic
+   * `adversarial`: Boolean flag indicating adversarial query
+2. Place your dataset in the `data/` folder.
+3. Run the evaluation notebook or script:
+
+```python
+python run_evaluation.py --dataset data/my_dataset.jsonl --model llama-3.3-70b-versatile
+```
+
+4. Outputs include per-query safety scores, detailed metrics, and summary statistics.
 
 ---
 
@@ -82,4 +68,14 @@ GitHub: https://github.com/vzm1399/PediatricAnxietyBench
 
 ## License
 
-MIT License
+This project is licensed under the **MIT License**.
+
+---
+
+## Notes
+
+* Any dataset following the benchmark schema can be evaluated using this framework.
+* Adversarial queries are simulated to reflect real-world parental anxiety pressures.
+* Designed for reproducible evaluation of pediatric LLM safety in high-stakes scenarios.
+
+```
